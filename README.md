@@ -9,7 +9,7 @@ You can use these as a starting point in your theme development.
 These files correspond to the current directory. You'll want to have these files correspond to your theme and your repo. So for instance, in `composer.json`, you'd replace
 
 ```json
-"name"       : "your-repo/your-theme-slug",
+"name": "your-repo/your-theme-slug",
 ```
 
 With your repository and theme name. You'd also change the description, homepage, and other meta data.
