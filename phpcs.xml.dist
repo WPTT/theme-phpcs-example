@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Theme Coding Standards" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+
+	<description>The Coding standard for the WordPress theme.</description>
+
+	<file>.</file>
+
+	<arg value="sp"/>
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="./"/>
+	<arg name="parallel" value="8"/>
+
+	<!-- Exclude Composer vendor, and node_modules directories. -->
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+
+	<!-- Exclude minified Javascript files. -->
+	<exclude-pattern>*.min.js</exclude-pattern>
+
+	<!-- Exclude WP Core folders and files from being checked. -->
+	<exclude-pattern>/docroot/wp-admin/*</exclude-pattern>
+	<exclude-pattern>/docroot/wp-includes/*</exclude-pattern>
+	<exclude-pattern>/docroot/wp-*.php</exclude-pattern>
+	<exclude-pattern>/docroot/index.php</exclude-pattern>
+	<exclude-pattern>/docroot/xmlrpc.php</exclude-pattern>
+	<exclude-pattern>/docroot/wp-content/plugins/*</exclude-pattern>
+
+	<!-- Include the WordPress Themes Team Review coding standards. -->
+	<rule ref="WPThemeReview" />
+
+	<!-- Let's also check that everything is properly documented. -->
+	<rule ref="WordPress-Docs"/>
+
+	<!-- Check code for cross-version PHP compatibility. -->
+	<config name="testVersion" value="7.4-"/>
+	<rule ref="PHPCompatibility"/>
+
+	<!-- Ensure the compatiblity with previous 3 versions.  -->
+	<config name="minimum_supported_wp_version" value="5.1"/>
+
+</ruleset>

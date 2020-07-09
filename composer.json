@@ -1,0 +1,45 @@
+{
+	"name": "wptt/theme-phpcs-example",
+	"description": "Sample composer file for a WordPress theme",
+	"type": "wordpress-theme",
+	"keywords": [
+		"WordPress",
+		"Themes"
+	],
+	"homepage": "https://github.com/WPTT/theme-phpcs-example",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "WordPress Themes Team",
+			"homepage": "https://make.wordpress.org/themes/",
+		},
+		{
+			"name": "Contributors",
+			"homepage": "https://github.com/WPTT/theme-phpcs-example/graphs/contributors"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"wptrt/wpthemereview": "^0.2.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+		"roave/security-advisories": "dev-master"
+	},
+	"scripts": {
+		"phpcs-i": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i"
+		],
+		"check-cs": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcs"
+		],
+		"fix-cs": [
+			"@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+		]
+	},
+	"support": {
+		"issues": "https://github.com/WPTT/theme-phpcs-example/issues",
+		"source": "https://github.com/WPTT/theme-phpcs-example"
+	}
+}
